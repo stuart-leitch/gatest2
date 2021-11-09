@@ -17,7 +17,7 @@ jobs:
     permissions:
       issues: write
     steps:
-      - uses: stuart-leitch/github-project-automation-plus@latest
+      - uses: stuart-leitch/github-project-automation-plus@main
         with:
           project: slprj1
           column: Inbox
