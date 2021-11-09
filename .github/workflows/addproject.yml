@@ -11,7 +11,7 @@ on:
 
 
 jobs:
-  add-comment:
+  add-project:
     if: github.event.label.name == 'tig'
     runs-on: ubuntu-latest
     permissions:
@@ -19,6 +19,6 @@ jobs:
     steps:
       - uses: stuart-leitch/github-project-automation-plus@main
         with:
-          project: slprj1
-          column: Inbox
+          project: 'slprj1'
+          column: 'Inbox'
           repo-token: ${{ secrets.GITHUB_TOKEN }}
