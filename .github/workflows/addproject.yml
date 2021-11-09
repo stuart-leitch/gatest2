@@ -1,0 +1,24 @@
+# This is a basic workflow to help you get started with Actions
+
+name: AddProjectwhenLabeled
+
+# Controls when the workflow will run
+on:
+  # Triggers the workflow anytime an issue has a label added
+  issues:
+    types:
+      - labeled
+
+
+jobs:
+  add-comment:
+    if: github.event.label.name == 'tig'
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+    steps:
+      - uses: stuart-leitch/github-project-automation-plus@latest
+        with:
+          project: slprj1
+          column: Inbox
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
